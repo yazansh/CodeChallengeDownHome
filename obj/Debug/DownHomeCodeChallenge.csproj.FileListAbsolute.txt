@@ -1,0 +1,7 @@
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\bin\Debug\DownHomeCodeChallenge.exe.config
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\bin\Debug\DownHomeCodeChallenge.exe
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\bin\Debug\DownHomeCodeChallenge.pdb
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\obj\Debug\DownHomeCodeChallenge.csproj.CoreCompileInputs.cache
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\obj\Debug\DownHomeCodeChallenge.exe
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\obj\Debug\DownHomeCodeChallenge.pdb
+C:\Users\Msys\source\repos\DownHomeCodeChallenge\DownHomeCodeChallenge\obj\Debug\DownHomeCodeChallenge.csprojAssemblyReference.cache
