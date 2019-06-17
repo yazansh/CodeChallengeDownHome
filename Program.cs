@@ -45,7 +45,7 @@ namespace DownHomeCodeChallenge
                 return false;
         }
 
-        /* This method detects every partition/sequence then calls the partialSort method to sort this certain sequence.
+        /* This method detects every partition/sequence then calls the NonDigitSort method to sort this certain sequence.
          * it checks every char whether it is a digit or not using the IsDigit method.
          * used (leftIndex) and (rightIndex) to detect sequence limits.
          * */
@@ -65,7 +65,8 @@ namespace DownHomeCodeChallenge
 
                 if (currentCharType != lastCharType)
                 {
-                    PartialSort(asciiNumbers, leftIndex, rightIndex);
+                    DigitOrNonDigitSort(asciiNumbers, leftIndex, rightIndex);
+
                     leftIndex = i;
                 }
 
@@ -73,23 +74,50 @@ namespace DownHomeCodeChallenge
                 lastCharType = currentCharType;
             }
 
-            PartialSort(asciiNumbers, leftIndex, rightIndex);
+            DigitOrNonDigitSort(asciiNumbers, leftIndex, rightIndex);
+
             return asciiNumbers;
+        }
+
+        private static void DigitOrNonDigitSort(int[] asciiNumbers, int leftIndex, int rightIndex)
+        {
+            if (IsDigit(asciiNumbers[leftIndex]))
+                DigitsSort(asciiNumbers, leftIndex, rightIndex);
+            else
+                NonDigitSort(asciiNumbers, leftIndex, rightIndex);
         }
 
         /* This method operates on the sequence sent by SortString method.
          * it sorts the sequence then assign the values back to the original array in the new order.
          */
-        public static void PartialSort(int[] array, int leftIndex, int rightIndex)
+        public static void NonDigitSort(int[] array, int leftIndex, int rightIndex)
         {
             int[] tempArray = new int[rightIndex - leftIndex + 1];
             for (int j = 0, i = leftIndex; i <= rightIndex; i++, j++)
                 tempArray[j] = array[i];
 
             Array.Sort(tempArray);
-            
+
             for (int j = 0, i = leftIndex; i <= rightIndex; i++, j++)
                 array[i] = tempArray[j];
+
+            return;
+        }
+
+        /* This method uses a hashed array to sort digits instead of normal sorting.
+         */
+        public static void DigitsSort(int[] array, int leftIndex, int rightIndex)
+        {
+            int[] digits = new int[10];
+            for (int i = leftIndex; i <= rightIndex; i++)
+                digits[array[i] - 48]++;
+
+            for (int j = 0, i = leftIndex; i <= rightIndex; j++)
+                while (digits[j] > 0)
+                {
+                    array[i++] = 48+j;
+                    digits[j]--;
+                }
 
             return;
         }
